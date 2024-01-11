@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import './App.scss';
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -53,41 +53,38 @@ function App() {
               <p>Your submit was successfully!</p>
             </div>
           )}
-          <div className="content">
-            <input
-              type="text"
-              value={userName}
-              onChange={(e) => userNameHandler(e)}
-              placeholder="First Name"
-            />
-            {submit && userName.length === 0 && (
-              <span>This input can't be empty!</span>
-            )}
-          </div>
 
-          <div className="content">
-            <input
-              type="text"
-              value={userFamily}
-              onChange={(e) => userFamilyHandler(e)}
-              placeholder="Last Name"
-            />
-            {submit && userFamily.length === 0 && (
-              <span>This input can't be empty!</span>
-            )}
-          </div>
+          <input
+            type="text"
+            value={userName}
+            onChange={(e) => userNameHandler(e)}
+            placeholder="First Name"
+          />
+          {submit && userName.length === 0 && (
+            <span>This input can't be empty!</span>
+          )}
 
-          <div className="content">
-            <input
-              type="text"
-              value={userEmail}
-              onChange={(e) => userEmailHandler(e)}
-              placeholder="Email"
-            />
-            {submit && userEmail.length === 0 && (
-              <span>This input can't be empty!</span>
-            )}
-          </div>
+
+
+          <input
+            type="text"
+            value={userFamily}
+            onChange={(e) => userFamilyHandler(e)}
+            placeholder="Last Name"
+          />
+          {submit && userFamily.length === 0 && (
+            <span>This input can't be empty!</span>
+          )}
+
+          <input
+            type="text"
+            value={userEmail}
+            onChange={(e) => userEmailHandler(e)}
+            placeholder="Email"
+          />
+          {submit && userEmail.length === 0 && (
+            <span>This input can't be empty!</span>
+          )}
           <button>Submit</button>
         </form>
       </div>
